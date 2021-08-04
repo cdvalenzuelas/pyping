@@ -1,6 +1,10 @@
 import numpy as np
 
 class RedExc:
+  """
+    RedExc class implement
+  """
+
   def __init__(self, pipe_dict, fluid_dict):    
     self.node_1 = pipe_dict['node_1']
     self.node_2 = pipe_dict['node_2']
@@ -35,8 +39,7 @@ class RedExc:
       self.V_2 = V * (D_1 / D_2) ** 2
     else: 
       self.V_1 = 4 * Q  / ( np.pi * D_1**2 )
-      self.V_2 = 4 * Q  / ( np.pi * D_2**2 )      
-      print(self.V_1, self.V_2)
+      self.V_2 = 4 * Q  / ( np.pi * D_2**2 )         
 
     self.Q = Q
     self.set_h()

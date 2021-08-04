@@ -1,15 +1,15 @@
 import numpy as np
 
-class Pipe:
+class Reservory:
   """
     Reservory class implement
   """
 
-  def __init__(self, reservory_dict, fluid_dict):
+  def __init__(self, reservory_dict):
     self.P = reservory_dict['P']
     self.node = reservory_dict['node']     
-    self.Q_max = 0
-    self.Q_min = 0
+    self.Q_min = reservory_dict['Q'][0]
+    self.Q_max = reservory_dict['Q'][1]
     self.Q = 0  
 
   def get_info(self, Q):
